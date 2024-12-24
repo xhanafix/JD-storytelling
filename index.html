@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadivila Storytelling Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jadivila Story Creator</h1>
+            <p class="subtitle">Craft inspiring stories that turn dreams into reality</p>
+        </header>
+
+        <section class="api-settings">
+            <div class="form-group">
+                <label for="apiKey">OpenRouter API Key:</label>
+                <input type="password" id="apiKey" placeholder="Enter your API key">
+                <button id="saveApiKey" class="secondary-btn">Save API Key</button>
+            </div>
+        </section>
+
+        <main>
+            <section class="generator-form">
+                <div class="form-group">
+                    <label for="storyStyle">Storytelling Style:</label>
+                    <select id="storyStyle">
+                        <option value="aspirational">Aspirational Journey</option>
+                        <option value="empowering">Empowerment Story</option>
+                        <option value="motivational">Motivational Success</option>
+                        <option value="lifestyle">Lifestyle Transformation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="emotionalTone">Emotional Tone:</label>
+                    <select id="emotionalTone">
+                        <option value="inspiring">Inspiring & Uplifting</option>
+                        <option value="warm">Warm & Welcoming</option>
+                        <option value="bold">Bold & Confident</option>
+                        <option value="reflective">Thoughtful & Reflective</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Language Style:</label>
+                    <select id="language">
+                        <option value="english">English</option>
+                        <option value="malay">Bahasa Melayu</option>
+                        <option value="bilingual">Bilingual</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="perspective">Narrative Perspective:</label>
+                    <select id="perspective">
+                        <option value="first">First Person (Personal Story)</option>
+                        <option value="second">Second Person (Your Journey)</option>
+                        <option value="third">Third Person (Success Story)</option>
+                    </select>
+                </div>
+
+                <button id="generateBtn">Create Your Story</button>
+            </section>
+
+            <section class="output-section">
+                <div class="output-container">
+                    <h2>Your Story</h2>
+                    <div id="contentOutput" class="content-box"></div>
+                    <button id="copyBtn" class="copy-btn">Share the Story</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
