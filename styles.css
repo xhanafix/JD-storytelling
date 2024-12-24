@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e67e22;
-    --background-color: #f9f9f9;
-    --text-color: #34495e;
+    --primary-color: #2d3436;
+    --secondary-color: #b8a07e;
+    --background-color: #f8f9fa;
+    --text-color: #2d3436;
     --border-radius: 12px;
     --transition: all 0.3s ease;
+    --gradient: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
 }
 
 * {
@@ -14,7 +15,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.8;
@@ -32,33 +33,43 @@ header {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 
 .subtitle {
-    color: #666;
-    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
     font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.brand-essence {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
 .api-settings {
-    background: white;
+    background: var(--gradient);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
     transition: var(--transition);
 }
 
 .generator-form {
-    background: white;
+    background: var(--gradient);
     padding: 2rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
     transition: var(--transition);
 }
@@ -72,21 +83,24 @@ label {
     margin-bottom: 0.8rem;
     font-weight: 500;
     color: var(--primary-color);
+    letter-spacing: 0.5px;
 }
 
 select, input {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #eee;
+    border: 1px solid #e0e0e0;
     border-radius: var(--border-radius);
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: var(--transition);
+    background: white;
 }
 
 select:focus, input:focus {
     border-color: var(--secondary-color);
     outline: none;
+    box-shadow: 0 0 0 2px rgba(184, 160, 126, 0.1);
 }
 
 button {
@@ -100,23 +114,24 @@ button {
     font-weight: 500;
     width: 100%;
     transition: var(--transition);
+    letter-spacing: 1px;
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .output-section {
-    background: white;
+    background: var(--gradient);
     padding: 2rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .content-box {
     min-height: 200px;
-    border: 2px solid #eee;
+    border: 1px solid #e0e0e0;
     border-radius: var(--border-radius);
     padding: 1.5rem;
     margin: 1rem 0;
@@ -124,6 +139,7 @@ button:hover {
     font-size: 1.1rem;
     line-height: 1.8;
     transition: var(--transition);
+    background: white;
 }
 
 .copy-btn {
@@ -132,7 +148,7 @@ button:hover {
 }
 
 .copy-btn:hover {
-    background-color: #d35400;
+    background-color: #a08d6e;
 }
 
 .secondary-btn {
@@ -146,6 +162,16 @@ button:hover {
     margin-top: 0.5rem;
 }
 
+.brand-philosophy {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 1.5rem;
@@ -157,6 +183,10 @@ button:hover {
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    
+    .brand-philosophy {
+        font-size: 1rem;
     }
 } 

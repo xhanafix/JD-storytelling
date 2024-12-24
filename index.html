@@ -3,76 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadivila Storytelling Generator</title>
+    <title>Jadivila Story Weaver</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Jadivila Story Creator</h1>
-            <p class="subtitle">Craft inspiring stories that turn dreams into reality</p>
+            <h1>Jadivila Story Weaver</h1>
+            <p class="subtitle">"It's not just a villa—it's the first chapter of your legacy"</p>
+            <div class="brand-essence">Where dreams find their sanctuary</div>
         </header>
 
         <section class="api-settings">
             <div class="form-group">
                 <label for="apiKey">OpenRouter API Key:</label>
                 <input type="password" id="apiKey" placeholder="Enter your API key">
-                <button id="saveApiKey" class="secondary-btn">Save API Key</button>
+                <button id="saveApiKey" class="secondary-btn">Save Key</button>
             </div>
         </section>
 
         <main>
             <section class="generator-form">
                 <div class="form-group">
-                    <label for="storyStyle">Storytelling Style:</label>
-                    <select id="storyStyle">
-                        <option value="aspirational">Aspirational Journey</option>
-                        <option value="empowering">Empowerment Story</option>
-                        <option value="motivational">Motivational Success</option>
-                        <option value="lifestyle">Lifestyle Transformation</option>
+                    <label for="storyMood">Story Essence:</label>
+                    <select id="storyMood">
+                        <option value="visionary">Visionary Dreams</option>
+                        <option value="legacy">Legacy Building</option>
+                        <option value="sanctuary">Peaceful Sanctuary</option>
+                        <option value="growth">Journey of Growth</option>
+                        <option value="milestone">Milestone Moments</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="emotionalTone">Emotional Tone:</label>
-                    <select id="emotionalTone">
-                        <option value="inspiring">Inspiring & Uplifting</option>
-                        <option value="warm">Warm & Welcoming</option>
-                        <option value="bold">Bold & Confident</option>
-                        <option value="reflective">Thoughtful & Reflective</option>
+                    <label for="emotionalCore">Emotional Core:</label>
+                    <select id="emotionalCore">
+                        <option value="aspirational">Aspirational & Bold</option>
+                        <option value="serene">Serene & Thoughtful</option>
+                        <option value="empowering">Empowering & Inspiring</option>
+                        <option value="nostalgic">Nostalgic & Heartfelt</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="language">Language Style:</label>
+                    <label for="language">Narrative Voice:</label>
                     <select id="language">
-                        <option value="english">English</option>
-                        <option value="malay">Bahasa Melayu</option>
-                        <option value="bilingual">Bilingual</option>
+                        <option value="english">English Poetry</option>
+                        <option value="malay">Bahasa Melayu Soul</option>
+                        <option value="bilingual">Bilingual Harmony</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="perspective">Narrative Perspective:</label>
-                    <select id="perspective">
-                        <option value="first">First Person (Personal Story)</option>
-                        <option value="second">Second Person (Your Journey)</option>
-                        <option value="third">Third Person (Success Story)</option>
+                    <label for="storyArc">Story Arc:</label>
+                    <select id="storyArc">
+                        <option value="dream">Dream to Reality</option>
+                        <option value="journey">Journey of Discovery</option>
+                        <option value="transformation">Transformative Moments</option>
+                        <option value="legacy">Legacy Creation</option>
                     </select>
                 </div>
 
-                <button id="generateBtn">Create Your Story</button>
+                <button id="generateBtn">Weave Your Story</button>
             </section>
 
             <section class="output-section">
                 <div class="output-container">
-                    <h2>Your Story</h2>
+                    <h2>Your Legacy Story</h2>
                     <div id="contentOutput" class="content-box"></div>
-                    <button id="copyBtn" class="copy-btn">Share the Story</button>
+                    <button id="copyBtn" class="copy-btn">Share Your Legacy</button>
                 </div>
             </section>
         </main>
+
+        <footer>
+            <div class="brand-philosophy">
+                "A canvas for dreams, an investment in your story, a sanctuary where passive income meets purpose."
+            </div>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>

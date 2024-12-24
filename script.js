@@ -1,8 +1,8 @@
-class StoryGenerator {
+class StoryWeaver {
     constructor() {
         this.apiKey = localStorage.getItem('openRouterApiKey');
         this.siteUrl = window.location.origin;
-        this.siteName = 'Jadivila Story Creator';
+        this.siteName = 'Jadivila Story Weaver';
 
         this.initializeElements();
         this.addEventListeners();
@@ -12,10 +12,10 @@ class StoryGenerator {
         this.generateBtn = document.getElementById('generateBtn');
         this.copyBtn = document.getElementById('copyBtn');
         this.contentOutput = document.getElementById('contentOutput');
-        this.storyStyleSelect = document.getElementById('storyStyle');
-        this.emotionalToneSelect = document.getElementById('emotionalTone');
+        this.storyMoodSelect = document.getElementById('storyMood');
+        this.emotionalCoreSelect = document.getElementById('emotionalCore');
         this.languageSelect = document.getElementById('language');
-        this.perspectiveSelect = document.getElementById('perspective');
+        this.storyArcSelect = document.getElementById('storyArc');
         this.apiKeyInput = document.getElementById('apiKey');
         this.saveApiKeyBtn = document.getElementById('saveApiKey');
         
@@ -25,8 +25,8 @@ class StoryGenerator {
     }
 
     addEventListeners() {
-        this.generateBtn.addEventListener('click', () => this.generateStory());
-        this.copyBtn.addEventListener('click', () => this.copyToClipboard());
+        this.generateBtn.addEventListener('click', () => this.weaveStory());
+        this.copyBtn.addEventListener('click', () => this.shareStory());
         this.saveApiKeyBtn.addEventListener('click', () => this.saveApiKey());
     }
 
@@ -35,59 +35,60 @@ class StoryGenerator {
         if (apiKey) {
             localStorage.setItem('openRouterApiKey', apiKey);
             this.apiKey = apiKey;
-            alert('API key saved successfully!');
+            alert('Key saved successfully!');
         } else {
-            alert('Please enter a valid API key');
+            alert('Please enter a valid key');
         }
     }
 
-    async generateStory() {
+    async weaveStory() {
         if (!this.apiKey) {
             alert('Please set your OpenRouter API key first');
             return;
         }
 
-        const storyStyle = this.storyStyleSelect.value;
-        const emotionalTone = this.emotionalToneSelect.value;
+        const storyMood = this.storyMoodSelect.value;
+        const emotionalCore = this.emotionalCoreSelect.value;
         const language = this.languageSelect.value;
-        const perspective = this.perspectiveSelect.value;
+        const storyArc = this.storyArcSelect.value;
 
         try {
             this.generateBtn.disabled = true;
-            this.generateBtn.textContent = 'Crafting Your Story...';
+            this.generateBtn.textContent = 'Weaving Your Story...';
 
-            const prompt = this.createStoryPrompt(storyStyle, emotionalTone, language, perspective);
+            const prompt = this.createStoryPrompt(storyMood, emotionalCore, language, storyArc);
             const content = await this.fetchFromAPI(prompt);
 
             this.contentOutput.textContent = content;
         } catch (error) {
-            console.error('Story generation error:', error);
-            this.contentOutput.textContent = 'Unable to create your story. Please try again.';
+            console.error('Story weaving error:', error);
+            this.contentOutput.textContent = 'Your story awaits another moment. Please try again.';
         } finally {
             this.generateBtn.disabled = false;
-            this.generateBtn.textContent = 'Create Your Story';
+            this.generateBtn.textContent = 'Weave Your Story';
         }
     }
 
-    createStoryPrompt(storyStyle, emotionalTone, language, perspective) {
-        return `Create an engaging ${emotionalTone} Facebook post for Jadivila using a ${storyStyle} approach in ${language}. 
-        Write from a ${perspective} perspective.
+    createStoryPrompt(storyMood, emotionalCore, language, storyArc) {
+        return `Create an emotionally resonant ${emotionalCore} Facebook post for Jadivila using a ${storyMood} narrative in ${language}. 
+        Follow the ${storyArc} story arc.
 
-        Key Story Elements:
-        - Jadivila offers 360 sqft villas at RM100k
-        - Built in 60 days using quality materials
-        - Perfect for passive income generation
-        - Represents growth and achievement for Malaysians
+        Brand Philosophy:
+        - "It's not just a villa—it's the first chapter of your legacy"
+        - A canvas for dreams, where passive income meets purpose
+        - A sanctuary for growth and future-building
+        
+        Storytelling Guidelines:
+        - Focus on emotional connection and aspirational themes
+        - Avoid direct mentions of price or technical details
+        - Use poetic and evocative language
+        - Weave in subtle metaphors about growth, legacy, and dreams
+        - Include thoughtfully placed emojis that enhance the emotional resonance
+        - Add meaningful hashtags that reflect the story's essence
+        - Keep the tone ${emotionalCore} throughout
+        - Make it deeply relatable to Malaysian aspirations and dreams
 
-        Story Guidelines:
-        - Focus on emotional connection and aspirational elements
-        - Emphasize the journey of growth and success
-        - Include relevant emojis for engagement
-        - Add meaningful hashtags
-        - Keep the tone ${emotionalTone} throughout
-        - Make it relatable to Malaysian dreams of property ownership
-
-        Make the story engaging, authentic, and shareable while maintaining the emotional resonance of the chosen style.`;
+        Create a story that inspires, touches hearts, and paints a vision of possibilities, similar to Nike's "Just Do It" or Ferrari's emotional storytelling approach.`;
     }
 
     async fetchFromAPI(prompt) {
@@ -124,16 +125,16 @@ class StoryGenerator {
             return data.choices[0].message.content;
         } catch (error) {
             console.error('API Error:', error);
-            throw new Error('Failed to generate story');
+            throw new Error('Failed to weave story');
         }
     }
 
-    async copyToClipboard() {
+    async shareStory() {
         try {
             await navigator.clipboard.writeText(this.contentOutput.textContent);
-            this.copyBtn.textContent = 'Story Copied!';
+            this.copyBtn.textContent = 'Legacy Ready to Share';
             setTimeout(() => {
-                this.copyBtn.textContent = 'Share the Story';
+                this.copyBtn.textContent = 'Share Your Legacy';
             }, 2000);
         } catch (err) {
             console.error('Failed to copy text: ', err);
@@ -141,7 +142,7 @@ class StoryGenerator {
     }
 }
 
-// Initialize the story generator when the page loads
+// Initialize the story weaver when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new StoryGenerator();
+    new StoryWeaver();
 }); 
